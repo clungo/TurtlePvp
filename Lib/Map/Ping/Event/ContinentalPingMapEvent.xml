@@ -1,0 +1,13 @@
+<Ui xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.blizzard.com/wow/ui/">
+    <Script file="ContinentalPingMapEventHandler.lua"/>
+    <Frame name="ContinentalPingMapHandler">
+        <Scripts>
+            <OnLoad>
+                ContinentalPingMap_OnLoad(this)
+            </OnLoad>
+            <OnEvent>
+                ContinentalPingMap_OnEvent(this, event)
+            </OnEvent>
+        </Scripts>
+    </Frame>
+</Ui>

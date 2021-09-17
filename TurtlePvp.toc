@@ -1,0 +1,12 @@
+## Interface: 11200
+## Title: TurtlePvP
+## Notes: Turtle Wow PoC World PvP
+## Author: Chumbabilly
+## Version: 0.0.1
+Lib\Debug\Debug.lua
+Lib\Character\Character.xml
+Lib\UI\UI.xml
+Lib\Character\Character.xml
+Lib\Map\Map.xml
+Lib\Communication\Communication.xml
+PoC.lua
