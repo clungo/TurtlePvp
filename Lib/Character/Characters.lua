@@ -29,9 +29,9 @@ function Characters:CullCharacters()
     local time = GetTime()
     for i = 1, table.getn(self) do
         local candidate = self[i]
-        if (time >= candidate.time + 30) then
-            --Printd("Removing outdated character: " .. candidate.name)
-            --table.remove(self, i);
+        if (time >= candidate.time + 600) then
+            Printd("Removing outdated character: " .. candidate.name)
+            table.remove(self, i);
         end
     end
 end
