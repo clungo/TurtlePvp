@@ -1,6 +1,6 @@
 worldMapCommunicationUpdateTime = 0;
 chatLoadTimePeriod = 10;
-communicationTimePeriod = 10;
+communicationTimePeriod = 30;
 
 function WorldMapCharacter_OnLoad(self)
     self:RegisterEvent("CHAT_MSG_CHANNEL");

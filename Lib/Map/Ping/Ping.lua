@@ -35,7 +35,11 @@ function Ping:new(dimensions)
     self.frame:SetFrameLevel(WorldMapDetailFrame:GetFrameLevel() + 1);
     self:setPoint();
     --self.frame:SetPoint("CENTER", WorldMapDetailFrame, "TOPLEFT", self.character.zoneGeo.x * WorldMapDetailFrame:GetWidth(), -self.character.zoneGeo.y * WorldMapDetailFrame:GetHeight());
-    self.frame:SetAlpha(0.4);
+    self:setAlpha(0.4);
+ end
+
+ function Ping:setAlpha()
+   self.frame:SetAlpha(0.4);
  end
 
  -- These setter methods primarily exist at the moment because of a lack of knowledge on calling super methods in lua

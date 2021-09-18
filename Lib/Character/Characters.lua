@@ -1,6 +1,8 @@
 Characters = {}
 Characters.__index = Characters;
 
+characterCullTime = 600;
+
 function Characters:Insert(character)
     -- Remove so that same character doesnt have two points if a bug happens
     self:Remove(character);
@@ -53,17 +55,19 @@ function Characters:CullCharacters()
     local time = GetTime()
     for i = 1, table.getn(self) do
         local candidate = self[i]
-        if (time >= candidate.time + 600) then
+        if (time >= candidate.time + characterCullTime) then
             --Printd("Removing outdated character: " .. candidate.name)
             table.remove(self, i);
         end
     end
 end
 
-zoneGeo1 = RegionalZone:new("Elwynn", 0.41, 0.655);
+--[[
+zoneGeo1 = RegionalZone:new("Wetlands", 0.41, 0.55);
 character1 = Character:new("Chumbabilly", 12, 0, zoneGeo1);
-zoneGeo2 = RegionalZone:new("Redridge", 0.4, 0.5);
+zoneGeo2 = RegionalZone:new("LochModan", 0.4, 0.5);
 character2 = Character:new("Fredge", 32, 0, zoneGeo2);
 
 Characters:Insert(character1);
 Characters:Insert(character2);
+]]--
