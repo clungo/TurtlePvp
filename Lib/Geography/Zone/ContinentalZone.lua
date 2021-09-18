@@ -1,6 +1,6 @@
-ContinentalZone = {}
-ContinentalZone.__index = ContinentalZone;
+ContinentalZone = ZoneGeo:new();
 
+--[[
 -- ContinentalX/Y are basically roughly where the centre of the ContinentalZone appears on a continent
 function ContinentalZone:new(name, continentalX, continentalY)
     local self = {};
@@ -10,3 +10,4 @@ function ContinentalZone:new(name, continentalX, continentalY)
     setmetatable(self, ContinentalZone);
     return self;
  end
+ ]]--

@@ -1,5 +1,3 @@
-local HelloWorld
-
 ActivePings = {};
 ActivePings.__index = ActivePings;
 
@@ -19,7 +17,6 @@ function ActivePings:Release()
         if (ping == nil and table.getn(self) ~= 0) then
             Printd("Something very wrong has occured");
         end
-        Printd("Releasing");
         ping:getFrame():SetScript("OnEnter", function() end);
         ping:getFrame():SetScript("OnLeave", function() end);
         ping:getFrame():Hide();
@@ -31,5 +28,5 @@ function ActivePings:Release()
     end
 end
 
-activePings = ActivePings:new();
+activeRegionalPings = ActivePings:new();
 activeContinentalPings = ActivePings:new();

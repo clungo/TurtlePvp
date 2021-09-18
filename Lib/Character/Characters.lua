@@ -7,6 +7,7 @@ function Characters:Insert(character)
     table.insert(self, character);
 end
 
+--[[
 function Characters:Release()
     for i = 1, table.getn(self) do
         local ping = table.remove(self);
@@ -14,6 +15,7 @@ function Characters:Release()
         pingFramePool:release(self.levelText:getFrame());
     end
 end
+]]--
 
 function Characters:Remove(character)
     for i = 1, table.getn(self) do
@@ -25,23 +27,11 @@ function Characters:Remove(character)
     end
 end
 
-function Characters:CullCharacters()
-    local time = GetTime()
-    for i = 1, table.getn(self) do
-        local candidate = self[i]
-        if (time >= candidate.time + 600) then
-            Printd("Removing outdated character: " .. candidate.name)
-            table.remove(self, i);
-        end
-    end
-end
-
-
 function Characters:Get(zone)
     local locationCharacters = {}
     for i = 1, table.getn(self) do
         local candidate = self[i]
-        if (candidate.zoneGeo.zone == zone) then
+        if (candidate.zoneGeo.name == zone) then
             table.insert(locationCharacters, candidate);
         end
     end
@@ -59,9 +49,20 @@ function Characters:GetAll()
     return allCharacters
 end
 
-zoneGeo1 = ZoneGeo:new("Elwynn", 0.41, 0.655);
-character1 = Character:new("Chumbabilly", 19, 0, zoneGeo1);
-zoneGeo2 = ZoneGeo:new("Redridge", 0.4, 0.5);
+function Characters:CullCharacters()
+    local time = GetTime()
+    for i = 1, table.getn(self) do
+        local candidate = self[i]
+        if (time >= candidate.time + 600) then
+            --Printd("Removing outdated character: " .. candidate.name)
+            table.remove(self, i);
+        end
+    end
+end
+
+zoneGeo1 = RegionalZone:new("Elwynn", 0.41, 0.655);
+character1 = Character:new("Chumbabilly", 12, 0, zoneGeo1);
+zoneGeo2 = RegionalZone:new("Redridge", 0.4, 0.5);
 character2 = Character:new("Fredge", 32, 0, zoneGeo2);
 
 Characters:Insert(character1);

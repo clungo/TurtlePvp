@@ -1,18 +1,18 @@
-local HelloWorld
-
 Ping = {}
 Ping.__index = Ping;
 
 --Hypothetically this frame pool could continuously grow. It's functioanlly upper bounded by current number of users online at once, unless there's a bug in the code
 pingFramePool = FramePool:new(worldMapeDetailsFrameCreateFrame, "pingFramePool")
 
-function Ping:new(character)
-    local self = {};
-    self.character = character;
-    self.texture = nil;
-    self.frame = nil;
-    setmetatable(self, Ping);
-    return self;
+-- This is an abstract class, abstract methods that need to be implemented have return 1 / 0 in them
+function Ping:new(dimensions)
+    local ping = {};
+    ping.texture = nil;
+    ping.frame = nil;
+    -- When we create new child classes, self.dimensions will be populated then
+    ping.dimensions = self.dimensions or dimensions;
+    setmetatable(ping, self);
+    return ping;
  end
 
  function Ping:getFrame()
@@ -23,50 +23,34 @@ function Ping:new(character)
  end
 
  function Ping:createFrame()
-    Printd("We are creating a ping frame");
     self.frame = pingFramePool:acquire();
-    self.frame:SetWidth(100);
-    self.frame:SetHeight(100);
+    self.frame:SetWidth(self.dimensions);
+    self.frame:SetHeight(self.dimensions);
     self.frame:EnableMouse(true);
-    self.frame:SetScript("OnEnter", function() self:createText() end) -- this routine you need to write
-    self.frame:SetScript("OnLeave", function() self:destroyText() end) -- this routine you need to write
+    self.frame:SetScript("OnEnter", function() self:onEnter() end)
+    self.frame:SetScript("OnLeave", function() self:onLeave() end)
     self:setTexture();
 
     self.frame:SetFrameStrata("TOOLTIP");
     self.frame:SetFrameLevel(WorldMapDetailFrame:GetFrameLevel() + 1);
-    self.frame:SetPoint("CENTER", WorldMapDetailFrame, "TOPLEFT", self.character.zoneGeo.x * WorldMapDetailFrame:GetWidth(), -self.character.zoneGeo.y * WorldMapDetailFrame:GetHeight());
+    self:setPoint();
+    --self.frame:SetPoint("CENTER", WorldMapDetailFrame, "TOPLEFT", self.character.zoneGeo.x * WorldMapDetailFrame:GetWidth(), -self.character.zoneGeo.y * WorldMapDetailFrame:GetHeight());
     self.frame:SetAlpha(0.4);
  end
 
- function Ping:createText()
-    self.levelText = LevelText:new(self.character.name, self.character.level, self.frame);
-    self.levelText:getFrame():Show();
+ -- These setter methods primarily exist at the moment because of a lack of knowledge on calling super methods in lua
+ function Ping:setPoint()
+    return 1 / 0;
  end
 
- function Ping:destroyText()
-    if (self.levelText == nil) then
-        return
-    end
-    self.levelText:getFrame():Hide();
-    self.levelText:getFrame().text:Hide();
-    levelTextFramePool:release(self.levelText:getFrame());
-    self.levelText = nil;
+ function Ping:onEnter()
+    return 1 / 0;
+ end
+
+ function Ping:onLeave()
+    return 1 / 0;
  end
 
  function Ping:setTexture()
-    local playerLevel = getPlayerLevel();
-    local pingLevel = self.character.level;
-    self.frame.texture = self.frame:CreateTexture()
-    self.frame.texture:SetTexture("Interface\\MINIMAP\\OBJECTICONS.blp");
-    self.frame.texture:SetTexCoord(0, 0.25, 0, 0.25);
-    self.frame.texture:SetAllPoints();
-
-    -- We set different colors depending on if the player is in your level range
-    if (playerLevel > pingLevel + 4) then
-        self.frame.texture:SetTexCoord(0.5, 0.75, 0, 0.25);
-    elseif (playerLevel + 4 < pingLevel) then
-        self.frame.texture:SetTexCoord(0.25, 0.5, 0, 0.25);
-    else
-        self.frame.texture:SetTexCoord(0, 0.25, 0, 0.25);
-    end
+    return 1 / 0;
 end

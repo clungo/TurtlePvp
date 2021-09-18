@@ -33,5 +33,4 @@ function LevelText:createFrame()
     self.frame.text = self.frame:CreateFontString(nil, "OVERLAY", "GameFontNormal");
     self.frame.text:SetPoint("BOTTOM", self.parentFrame, "TOP", 0.5, -0.5);
     self.frame.text:SetText(self.name .. ", " .. self.level);
-    Printd("level text frame created");
 end

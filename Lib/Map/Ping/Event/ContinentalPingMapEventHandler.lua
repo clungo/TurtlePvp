@@ -1,6 +1,5 @@
 
 function ContinentalPingMap_OnEvent(self, event)
-    Printd("Starting continental");
     if (event == "WORLD_MAP_UPDATE") then
         activeContinentalPings:Release();
         local zone = GetMapInfo();
@@ -10,7 +9,6 @@ function ContinentalPingMap_OnEvent(self, event)
             displayContinentalPings(self, kalimdor);
         end
     end
-    Printd("stopping continental");
 end
 
 function ContinentalPingMap_OnLoad(self)
@@ -20,11 +18,11 @@ end
 function displayContinentalPings(self, continent)
     local characters = Characters:GetAll();
     local zoneNames = {};
-    local playerFaction = getPlayerFaction();
+    local playerCharacter = Player:ToCharacter();
     for i = 1, table.getn(characters) do
         local character = characters[i];
-        if (character.faction ~= playerFaction) then
-            local zoneName = character.zoneGeo.zone;
+        if (playerCharacter:compareFaction(character) == 1) then
+            local zoneName = character.zoneGeo.name;
             if (zoneNames[zoneName] == nil) then
                 zoneNames[zoneName] = true;
             end
@@ -36,8 +34,8 @@ function displayContinentalPings(self, continent)
             return;
         end
         if (continent:isPresent(continentalZone)) then
-            Printd("Showing continentalZone: " .. continentalZone.name);
-            local continentalPing = ContinentalPing:new(continentalZone);
+            local continentalPing = ContinentalPing:new();
+            continentalPing:setContinentalZone(continentalZone);
             continentalPing:getFrame():Show();
             activeContinentalPings:Insert(continentalPing);
         end

@@ -18,8 +18,10 @@ function PVPToggleEvent_OnUpdate(elapsedTime)
 end
 
 function characterIsNear()
-    local zone, x, y = getPlayerPoint();
-    local characterCandidates = Characters:Get(zone);
+    local playerCharacter = Player:ToCharacter();
+    local x = playerCharacter.zoneGeo.x;
+    local y = playerCharacter.zoneGeo.y;
+    local characterCandidates = Characters:Get(playerCharacter.zoneGeo.name);
 
     for i = 1, table.getn(characterCandidates) do
         local character = characterCandidates[i];
@@ -27,17 +29,10 @@ function characterIsNear()
         local candidateY = character.zoneGeo.y;
 
         local distance = math.sqrt((candidateX - x)*(candidateX - x) + (candidateY - y)*(candidateY -y));
-        if (distance <= 0.061 and character.faction ~= getPlayerFaction() and characterNearPlayerLevel(character)) then
+        if (distance <= 0.061 and playerCharacter:compareFaction(character) == 1 and playerCharacter:compareLevelRange(character) == 0) then
             return true;
         end
     end
 
     return false;
 end
-
-function characterNearPlayerLevel(character)
-    local characterLevel = character.level;
-    local playerLevel = getPlayerLevel();
-
-    return characterLevel >= playerLevel - 4 and characterLevel <= playerLevel + 4;
-end    
