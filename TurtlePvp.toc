@@ -2,7 +2,7 @@
 ## Title: TurtlePvP
 ## Notes: Turtle Wow PoC World PvP
 ## Author: Chumbabilly
-## Version: 0.0.2
+## Version: 0.0.3
 Lib\Debug\Debug.lua
 Lib\Geography\Geography.xml
 Lib\Character\Character.xml

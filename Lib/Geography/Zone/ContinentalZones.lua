@@ -20,29 +20,31 @@ easternKingdomsContinentalZones = {
     ContinentalZone:new("Arathi", 0.535, 0.375),
     ContinentalZone:new("Wetlands", 0.533, 0.48),
     ContinentalZone:new("LochModan", 0.55, 0.545),
-
-    ContinentalZone:new("DunMorogh", 0.463, 0.70),
-    ContinentalZone:new("SearingGorge", 0.463, 0.70),
-    ContinentalZone:new("Badlands", 0.463, 0.70),
-    ContinentalZone:new("BurningSteppes", 0.463, 0.70),
+    ContinentalZone:new("DunMorogh", 0.46, 0.545),
+    ContinentalZone:new("SearingGorge", 0.49, 0.61),
+    ContinentalZone:new("Badlands", 0.55, 0.61),
+    ContinentalZone:new("BurningSteppes", 0.5, 0.66),
     ContinentalZone:new("Elwynn", 0.463, 0.70),
     ContinentalZone:new("Redridge", 0.54, 0.71),
-    ContinentalZone:new("Westfall", 0.54, 0.71),
-    ContinentalZone:new("DeadwindPass", 0.54, 0.71),
-    ContinentalZone:new("SwampOfSorrows", 0.54, 0.71),
-    ContinentalZone:new("BlastedLands", 0.54, 0.71),
-    ContinentalZone:new("Stranglethorn", 0.54, 0.71)
+    ContinentalZone:new("Duskwood", 0.469, 0.775),
+    ContinentalZone:new("Westfall", 0.41, 0.775),
+    ContinentalZone:new("DeadwindPass", 0.51, 0.778),
+    ContinentalZone:new("SwampOfSorrows", 0.55, 0.765),
+    ContinentalZone:new("BlastedLands", 0.54, 0.82),
+    ContinentalZone:new("Stranglethorn", 0.49, 0.84)
 };
 
 kalimdorZones = {
-    ContinentalZone:new("Teldrassil", 0.585, 0.50),
-    ContinentalZone:new("Moonglade", 0.585, 0.50),
-    ContinentalZone:new("Darkshore", 0.585, 0.50),
-    ContinentalZone:new("Winterspring", 0.585, 0.50),
-    ContinentalZone:new("Felwood", 0.585, 0.50),
-    ContinentalZone:new("Ashenvale", 0.585, 0.50),
-    ContinentalZone:new("Aszhara", 0.585, 0.50),
+    ContinentalZone:new("Teldrassil", 0.43, 0.12),
+    ContinentalZone:new("Moonglade", 0.535, 0.2),
+    ContinentalZone:new("Darkshore", 0.46, 0.26),
+    ContinentalZone:new("Winterspring", 0.57, 0.25),
+    ContinentalZone:new("Felwood", 0.484, 0.28),
+    ContinentalZone:new("Ashenvale", 0.49, 0.42),
+
+    ContinentalZone:new("Aszhara", 0.595, 0.40),
     ContinentalZone:new("Durotar", 0.585, 0.50),
+
     ContinentalZone:new("StonetalonMountains", 0.585, 0.50),
     ContinentalZone:new("Barrens", 0.585, 0.50),
     ContinentalZone:new("Descolace", 0.585, 0.50),

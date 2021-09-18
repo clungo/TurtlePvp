@@ -63,10 +63,10 @@ function Characters:CullCharacters()
 end
 
 --[[
-zoneGeo1 = RegionalZone:new("Wetlands", 0.41, 0.55);
-character1 = Character:new("Chumbabilly", 12, 0, zoneGeo1);
-zoneGeo2 = RegionalZone:new("LochModan", 0.4, 0.5);
-character2 = Character:new("Fredge", 32, 0, zoneGeo2);
+zoneGeo1 = RegionalZone:new("Aszhara", 0.35, 0.3);
+character1 = Character:new("Chumbabilly", 12, 1, zoneGeo1);
+zoneGeo2 = RegionalZone:new("Durotar", 0.4, 0.5);
+character2 = Character:new("Fredge", 32, 1, zoneGeo2);
 
 Characters:Insert(character1);
 Characters:Insert(character2);
