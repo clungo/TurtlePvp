@@ -1,7 +1,6 @@
 
 function ContinentalPingMap_OnEvent(self, event)
     if (event == "WORLD_MAP_UPDATE" and WorldMapFrame:IsVisible()) then
-        Printd("visible");
         activeContinentalPings:Release();
         local zone = GetMapInfo();
         if (zone == "Azeroth") then
@@ -9,8 +8,6 @@ function ContinentalPingMap_OnEvent(self, event)
         elseif (zone == "Kalimdor") then
             displayContinentalPings(self, kalimdor);
         end
-    else
-        Printd("not visible")
     end
 end
 
