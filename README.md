@@ -1,6 +1,8 @@
 # TurtlePvp
 Turtle pvp is an addon designed to facilitate world pvp to the small collection turtles who are interested in that sort of thing.  
 
+<h1>Installation</h1>  
+Download a zip of this repository, or git clone it, and place the folder under Interface\Addons  
 <h1>Features</h1> 
 
 This is done through the following implemented features:  
