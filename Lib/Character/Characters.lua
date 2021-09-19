@@ -56,7 +56,7 @@ function Characters:CullCharacters()
     for i = 1, table.getn(self) do
         local candidate = self[i]
         --ToDo: Investigate why candidate can be nil
-        if (--[[candidate ~= nil and]] time >= candidate.time + characterCullTime) then
+        if (candidate ~= nil and time >= candidate.time + characterCullTime) then
             --Printd("Removing outdated character: " .. candidate.name)
             table.remove(self, i);
         end
