@@ -22,9 +22,6 @@ function isMessageFormatted(message)
     isXValid = verifyCoord(x)
     isYValid = verifyCoord(y)
     isStringValid = isNameValid and isLevelValid and isFactionValid and isZoneValid and isXValid and isYValid;
-    if (not isStringValid) then
-        Printd("Invalid chat String: " .. message);
-    end
 
     return isStringValid;
 end
