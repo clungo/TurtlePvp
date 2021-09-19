@@ -20,7 +20,8 @@ This is the rough ordered timeline of how this addon will be developped from the
 
 * Add namespacing for all variables  
 * Add a config lua file that is easy to parse, for people looking to tweak options  
-* Add an in-game minimap bottom to toggle addon features  
+* Add an in-game minimap bottom to toggle addon features 
+* Fix issue where members of the same party can be flagged for pvp when near each other 
 
 <h2>Beta</h2>  
 
