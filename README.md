@@ -1,6 +1,8 @@
 # TurtlePvp
 Turtle pvp is an addon designed to facilitate world pvp to the small collection turtles who are interested in that sort of thing.  
 
+<h1>Installation</h1>  
+Download a zip of this repository, or git clone it, and place the folder under Interface\Addons  
 <h1>Features</h1> 
 
 This is done through the following implemented features:  
@@ -20,7 +22,9 @@ This is the rough ordered timeline of how this addon will be developped from the
 
 * Add namespacing for all variables  
 * Add a config lua file that is easy to parse, for people looking to tweak options  
-* Add an in-game minimap bottom to toggle addon features  
+* Add an in-game minimap bottom to toggle addon features 
+* Fix issue where members of the same party can be flagged for pvp when near each other
+* Replace the temporary icons with higher quality icons 
 
 <h2>Beta</h2>  
 
