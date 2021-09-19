@@ -41,20 +41,18 @@ kalimdorZones = {
     ContinentalZone:new("Winterspring", 0.57, 0.25),
     ContinentalZone:new("Felwood", 0.484, 0.28),
     ContinentalZone:new("Ashenvale", 0.49, 0.42),
-
     ContinentalZone:new("Aszhara", 0.595, 0.40),
     ContinentalZone:new("Durotar", 0.585, 0.50),
-
-    ContinentalZone:new("StonetalonMountains", 0.585, 0.50),
-    ContinentalZone:new("Barrens", 0.585, 0.50),
-    ContinentalZone:new("Descolace", 0.585, 0.50),
-    ContinentalZone:new("Mulgore", 0.585, 0.50),
-    ContinentalZone:new("Dustwallow", 0.585, 0.50),
-    ContinentalZone:new("Feralas", 0.585, 0.50),
-    ContinentalZone:new("ThousandNeedles", 0.585, 0.50),
-    ContinentalZone:new("Silithus", 0.585, 0.50),
-    ContinentalZone:new("UngoroCrater", 0.585, 0.50),
-    ContinentalZone:new("Tanaris", 0.585, 0.50)
+    ContinentalZone:new("StonetalonMountains", 0.44, 0.48),
+    ContinentalZone:new("Barrens", 0.52, 0.585),
+    ContinentalZone:new("Descolace", 0.42, 0.58),
+    ContinentalZone:new("Mulgore", 0.475, 0.6),
+    ContinentalZone:new("Dustwallow", 0.55, 0.67),
+    ContinentalZone:new("Feralas", 0.435, 0.7),
+    ContinentalZone:new("ThousandNeedles", 0.52, 0.75),
+    ContinentalZone:new("Silithus", 0.435, 0.85),
+    ContinentalZone:new("UngoroCrater", 0.496, 0.835),
+    ContinentalZone:new("Tanaris", 0.55, 0.86)
 };
 
 

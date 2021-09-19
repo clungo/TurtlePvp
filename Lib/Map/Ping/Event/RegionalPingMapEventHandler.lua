@@ -1,6 +1,6 @@
 
 function RegionalPingMap_OnEvent(self, event, ...)
-    if (event == "WORLD_MAP_UPDATE") then
+    if (event == "WORLD_MAP_UPDATE" and WorldMapFrame:IsVisible()) then
         activeRegionalPings:Release();
         local zone = GetMapInfo();
         local characters = Characters:Get(zone);

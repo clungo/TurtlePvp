@@ -30,7 +30,7 @@ function Player:GetName()
     return UnitName("player")
 end
 
-function Player:isFlying()
+function Player:IsFlying()
     return UnitOnTaxi("player");
 end
 
