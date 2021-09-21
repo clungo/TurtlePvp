@@ -9,19 +9,19 @@ function isMessageFormatted(message)
         return false
     end
 
-    characterName = tokens[1];
-    level = tokens[2];
-    faction = tokens[3];
-    zone = tokens[4];
-    x = tokens[5];
-    y = tokens[6];
-    isNameValid = verifyOnlyLetters(characterName)
-    isLevelValid = verifyLevel(level)
-    isFactionValid = verifyFaction(faction)
-    isZoneValid = verifyZone(zone)
-    isXValid = verifyCoord(x)
-    isYValid = verifyCoord(y)
-    isStringValid = isNameValid and isLevelValid and isFactionValid and isZoneValid and isXValid and isYValid;
+    local characterName = tokens[1];
+    local level = tokens[2];
+    local faction = tokens[3];
+    local zone = tokens[4];
+    local x = tokens[5];
+    local y = tokens[6];
+    local isNameValid = verifyOnlyLetters(characterName)
+    local isLevelValid = verifyLevel(level)
+    local isFactionValid = verifyFaction(faction)
+    local isZoneValid = verifyZone(zone)
+    local isXValid = verifyCoord(x)
+    local isYValid = verifyCoord(y)
+    local isStringValid = isNameValid and isLevelValid and isFactionValid and isZoneValid and isXValid and isYValid;
 
     return isStringValid;
 end
@@ -37,7 +37,7 @@ function verifyOnlyLetters(name)
 end
 
 function verifyLevel(level)
-    numericLevel = tonumber(level);
+    local numericLevel = tonumber(level);
     if (numericLevel == nil) then
         return false;
     end
@@ -64,18 +64,18 @@ function verifyZone(zone)
 end
 
 function verifyCoord(coord)
-    numericValue = tonumber(coord);
+    local numericLevel = tonumber(coord);
     if (numericLevel == nil) then
         return false;
     end
-    return numericValue >= 0 and numericValue <= 1;
+    return numericLevel >= 0 and numericLevel <= 1;
 end
 
 function verifyFaction(faction)
-    numericValue = tonumber(faction);
+    local numericLevel = tonumber(faction);
     if (numericLevel == nil) then
         return false;
     end
 
-    return numericValue == 0 or numericValue == 1
+    return numericLevel == 0 or numericLevel == 1
 end
