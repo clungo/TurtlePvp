@@ -1,5 +1,5 @@
 function isMessageFormatted(message)
-    tokens = {};
+    local tokens = {};
     -- gfind doesnt return a table. i returns a 'function value' or something. pain in the ass
     for token in string.gfind(message, "[^,]+") do
         table.insert(tokens, token)
